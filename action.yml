@@ -1,0 +1,20 @@
+name: Lambda layer for python
+author: Lukáš Orčík
+description: Deploy python code to AWS Lambda with dependencies in a separate layer.
+inputs:
+  requirements_txt:
+    description: the name/path to the requirements.txt file
+    required: true
+    default: 'requirements.txt'
+  lambda_layer_arn:
+    description: The ARN for the Lambda layer the dependencies (every push is a new version).
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.requirements_txt }}
+    - ${{ inputs.lambda_layer_arn }}
+branding:
+  icon: 'layers'
+  color: 'blue'
