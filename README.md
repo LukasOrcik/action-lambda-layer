@@ -22,6 +22,8 @@ jobs:
       uses: LukasOrcik/action-lambda-layer@0.1.0
       with:
         lambda_layer_arn: 'arn:aws:lambda:us-east-2:123456789012:layer:my-layer'
+        architectures: 'x86_64'
+        runtimes: 'python3.9 python3.8'
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

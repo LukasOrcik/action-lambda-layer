@@ -9,12 +9,22 @@ inputs:
   lambda_layer_arn:
     description: The ARN for the Lambda layer the dependencies (every push is a new version).
     required: true
+  architectures:
+    description: Target architectures
+    required: false
+    default: 'x86_64'
+  runtimes:
+    description: Compatible runtimes in space-separated string
+    required: false
+    default: 'python3.9 python3.8'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.requirements_txt }}
     - ${{ inputs.lambda_layer_arn }}
+    - ${{ inputs.architectures }}
+    - ${{ inputs.runtimes }}
 branding:
   icon: 'layers'
   color: 'blue'
