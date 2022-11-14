@@ -4,7 +4,7 @@ set -euo pipefail
 install_zip_dependencies(){
 	echo "Installing and zipping dependencies..."
 	mkdir python
-	pip install --target=python -r ${INPUT_REQUIREMENTS_TXT}
+	pip install --target=python -r "${INPUT_REQUIREMENTS_TXT}"
 	# cp -r "${INPUT_PACKAGE_PATH}/*" python/
 	cp -r common/* python/
 	echo $(ls)
