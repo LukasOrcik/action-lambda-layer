@@ -7,7 +7,6 @@ install_zip_dependencies(){
 	pip install --target=python -r "${INPUT_REQUIREMENTS_TXT}" --no-cache-dir
 	cp -r "${INPUT_PACKAGE_PATH}" python/
 	zip -r dependencies.zip ./python
-	echo "${INPUT_PACKAGE_PATH}"
 	echo "Done installing and zipping dependencies"
 }
 
