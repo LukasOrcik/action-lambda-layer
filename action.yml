@@ -21,6 +21,10 @@ inputs:
     description: Package path
     required: true
     default: 'common'
+  layer_description:
+    description: Layer description
+    required: false
+    default: 'verion 0.1.17'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -30,6 +34,7 @@ runs:
     - ${{ inputs.architectures }}
     - ${{ inputs.runtimes }}
     - ${{ inputs.package_path }}
+    - ${{ inputs.layer_description }}
 branding:
   icon: 'layers'
   color: 'blue'
