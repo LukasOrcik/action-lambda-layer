@@ -25,8 +25,9 @@ jobs:
         architectures: 'x86_64'
         runtimes: 'python3.9 python3.8'
         package_path: 'common'
+        layer_description: 'verion 0.1.17'
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_DEFAULT_REGION: 'us-east-2'
+        AWS_DEFAULT_REGION: 'eu-central-1'
 ```

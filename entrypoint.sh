@@ -35,4 +35,4 @@ deploy_lambda_layer()
 }
 
 deploy_lambda_layer
-echo "Done."
+echo "Lambda layer deployed successfully"
